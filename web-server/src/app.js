@@ -35,6 +35,8 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
+        title: "Help",
+        name: "Arth Shah",
         message: "What Can I help you with?"
     })
 })
@@ -43,7 +45,23 @@ app.get('/weather', (req, res) => {
     res.send({ forecast: 95 + "F", location: "Dallas" })
 })
 
+app.get('/help/*', (req, res) => {
+    res.render('error', {
+        title: "Error 404",
+        name: "Arth Shah",
+        message: "Help Article Not Found"
+    })
+})
+
+app.get('*', function callback(req, res) {
+    res.render('error', {
+        title: "Error 404",
+        name: "Arth Shah",
+        message: "Page Not Found"
+    })
+})
+
+
 app.listen(3000, function callback() {
     console.log('Server is on port 3000')
 })
-
