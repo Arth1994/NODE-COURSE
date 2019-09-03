@@ -12,7 +12,7 @@ const forecast = function (latitude, longitude, callback) {
             callback('Unable to connect to location services', undefined);
         }
         else {
-            callback(undefined, 'The High is as follows: '+res.body.daily.data[0].temperatureHigh+' The Current weather is:' +res.body.daily.data[0].summary + 'It is: ' + res.body.currently.temperature + ' The Probabilty is:' + res.body.currently.precipProbability);
+            callback(undefined, 'The High is as follows: '+res.body.daily.data[0].temperatureHigh+ 'The Low is: '+res.body.daily.data[0].temperatureLow+ ' The Current weather is:' +res.body.daily.data[0].summary + 'It is: ' + res.body.currently.temperature + ' The Probabilty is:' + res.body.currently.precipProbability);
         }
     });
 }
