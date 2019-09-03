@@ -6,12 +6,15 @@
   "scripts": {
     "start": "node src/app.js"
   },
+  "client": "npm start --prefix client",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "core-util-is": "^1.0.2",
     "express": "^4.17.1",
     "hbs": "^4.0.4",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "webpack-dev-server": "^3.8.0"
   }
 }
